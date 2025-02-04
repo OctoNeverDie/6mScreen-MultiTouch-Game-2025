@@ -58,7 +58,7 @@ def process_image_with_alpha(image_path, output_path, mean=0, var=25):
     cv2.destroyAllWindows()
     
 if __name__ == "__main__":
-    input_image_path = "C:/Users/JSY/Desktop/multitouch/stars.png"  # 입력 이미지 경로
+    input_image_path = "C:/Users/JSY/Desktop/multitouch/starMap.png"  # 입력 이미지 경로
     output_image_path = "C:/Users/JSY/Desktop/multitouch/stars_noisy_alpha.png"  # 출력 이미지 경로
     process_image_with_alpha(input_image_path, output_image_path, mean=-225, var=800)
     
