@@ -23,7 +23,7 @@
 ### 4. 판정 시스템
 
 ## 결과 보고
-https://youtu.be/chSA9CkVb6g
-https://youtu.be/ta2BROtS100
+[시연 동영상](https://youtu.be/chSA9CkVb6g)
+
 
 ## 발전 가능성
