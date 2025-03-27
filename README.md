@@ -117,6 +117,7 @@
 
 ## 결과 보고
 [시연 동영상](https://youtu.be/chSA9CkVb6g)
+[![시연 동영상](http://img.youtube.com/vi/chSA9CkVb6g/0.jpg)](https://youtu.be/chSA9CkVb6g)
 
 
 ## 발전 가능성
