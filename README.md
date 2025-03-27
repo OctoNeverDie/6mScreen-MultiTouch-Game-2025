@@ -1,4 +1,4 @@
-## 작성 기여자
+## 팀원 소개
 
 * 김현민
 * [이주연](https://github.com/Yongmalyang/)
