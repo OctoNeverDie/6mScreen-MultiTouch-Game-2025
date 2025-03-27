@@ -31,7 +31,7 @@
     2. **전체 채도 낮춤** (BGR → HSV → BGR, 원래 채도의 20%)
     3. **전체 대비 낮춤** (중간값 128과의 거리를 0.5만큼 줄인다)
        
-    ![background (1)](https://github.com/user-attachments/assets/491e416a-c4d1-45d7-9925-743ae55ddc1e)
+    <img src="https://github.com/user-attachments/assets/491e416a-c4d1-45d7-9925-743ae55ddc1e" width="300">
 
 2. 별자리 상 생성
     
@@ -41,8 +41,7 @@
     2. 엣지로만 작업, 꼭짓점 잘 표현됐는지 확인 
     3. 이후 전체에 Gaussian Blur 100 적용
        
-    ![croi2](https://github.com/user-attachments/assets/67f6367c-8d8b-44dd-a9f1-0aada081c3d4)
-
+    <img src="https://github.com/user-attachments/assets/67f6367c-8d8b-44dd-a9f1-0aada081c3d4" width="300">
 
 3. 배경화면에 별자리 상 합침
     
@@ -57,7 +56,7 @@
     5. **상의 알파값 높이기**(투명하게 만든다, *0.2)
     6. 이후 배경 위에 처리된 상을 합성
        
-   ![croi2_4 178_9_2 804_2 416](https://github.com/user-attachments/assets/3cdfa1c7-53d2-4d1e-929b-7801f268739c)
+    <img src="https://github.com/user-attachments/assets/3cdfa1c7-53d2-4d1e-929b-7801f268739c" width="300">
 
 4. 최종 이미지 지표값 도출
 
@@ -100,6 +99,7 @@
     6. 이후 이 중 가장 색 분포가 고르지 않은 값을 도출
     7. 몇 번 색 분포도 검사했는지 횟수 도출
     8. 이때까지 검사한 색 분포도의 평균을 도출
+
        
     <img src="https://github.com/user-attachments/assets/eca0269e-b8a3-4e32-b5c5-7bf672cac72c" width="300">
 
