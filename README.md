@@ -1,31 +1,63 @@
-## 팀원 소개
+## 🌠 Stellar: An Unreal Engine-Based Large Screen & OptiTUIO Multitouch Game / Stellar : Unreal Engine 기반 대형스크린 & OptiTUIO 멀티터치 게임
 
-* [김현민](https://github.com/hyunmin0809)
-* [이주연](https://github.com/Yongmalyang/)
-* [주소연](https://github.com/dubidubob)
+**Stellar** is a cooperative multiplayer game for three or more players, characterized by easy controls and fast-paced gameplay.
 
-## 프로젝트 의의
+**Platform:** Windows  
+**Engine:** Unreal 5.3.2
+
+Stellar는 3인 이상의 멀티플레이어 협동 게임으로, 쉬운 조작과 빠른 게임 진행이 특징입니다.
+
+플랫폼: Windows
+사용엔진: Unreal 5.3.2
 
 ![image](https://github.com/user-attachments/assets/5180ec91-8a99-4b28-9bba-840ad3534b87)
 
-가로폭 6m 대형스크린에서 Multitouch를 활용하여 구동할 수 있는 새로운 게임 콘텐츠를 제시하고자 게임 Stellar를 고안 및 개발했습니다.
+## Team Introduction / 팀원 소개
+
+* [KIM HYUN MIN 김현민](https://github.com/hyunmin0809)
+* [LEE JU YEON 이주연](https://github.com/Yongmalyang/)
+* [JOO SO YEON 주소연](https://github.com/dubidubob)
+
+## Table of Contents / 목차 
+
+[Game Description / 게임 설명]
+[Key Features / 주요 기능]
+* [1. Tutorial / 튜토리얼]
+* [2. Multitouch Touch Screen / 멀티터치 터치 스크린]
+* [3. Grading / 판정 시스템]
+* [4. Game Sequence / 게임 시퀀스]
+[Principle of Optical Illusion / 착시 원리]
+
+## Game Description / 게임 설명
+
 이 게임은 3인 이상의 멀티플레이어 협동 게임입니다. 1명이 지휘를, 나머지 사람들이 동작을 맡습니다.
 지휘자 1명이 뒤에 서서 착시 이미지를 보고 형태를 설명하면, 앞에 선 나머지 사람들이 형태에 맞게 input을 넣습니다.
 특정 동작에서 정지하고 3초간 홀드하면 한 개의 퍼즐이 클리어됩니다.
 라이다 센서 기반 멀티터치를 잘 받아와서 속도감 있는 게임으로 제작하는 것이 관건이었습니다.
 
-## 주요 기능
+## Key Features / 주요 기능
 
-### 1. 튜토리얼
+### 1. Tutorial 튜토리얼
 
 ![image](https://github.com/user-attachments/assets/23ec2331-6719-42e1-b304-033ada46b206)
+
+Before the game starts, a short tutorial video is played.  
+It introduces role distribution among players, game rules, and screen touch techniques.
 
 게임 시작 전, 짧은 게임 방법 소개 영상이 재생됩니다. 
 함께 플레이할 유저들과의 역할 분담, 게임의 규칙, 스크린 터치 요령 등을 안내합니다. 
 
-### 2. 멀티터치 터치 스크린
+### 2. Multitouch Touch Screen / 멀티터치 터치 스크린
 
 ![image](https://github.com/user-attachments/assets/f72efbbe-2390-4703-a899-35518854b46c)
+
+* The screen displays an optical illusion image containing hidden shapes.  
+  * (Refer to the "Optical Illusion Principle" section for details.)  
+* Players standing close to the screen may find it difficult to spot the shapes, while the player standing at the back can see approximately 2 to 5 points connected by lines.  
+* The player at the back communicates the positions to the players in front.  
+  * Example: "Raise your left hand a bit higher," "Move your right foot slightly to the left," etc.  
+* After correctly positioning, the players must maintain the pose for 3 seconds.  
+  * At this time, the number of touches within a specified range must match the number of points to trigger the validation.
 
 * 화면 상에는 특정 그림이 숨겨진 착시 이미지가 배치됩니다.
   * (착시에 관한 내용은 '착시 원리' 부분 참고) 
@@ -35,7 +67,14 @@
 * 제대로 입력을 한 후, 그 상태를 3초간 유지해야 합니다.
   * 이때, 점의 개수와 동일한 개수의 터치 수가 일정 범위 내에 입력되어야만 판정을 시작합니다. 
 
-### 3. 판정 시스템
+### 3. Grading / 판정 시스템
+
+* Once the validation conditions are met, a 3-second countdown begins.  
+* The accuracy is measured by how close the user's input is to the star pattern.  
+* The accuracy takes into account the number of inputs and the distance between each input and the stars.  
+* If the number of inputs changes or the inputs move further from the points during the 3-second countdown, the process will restart from the beginning.  
+* If the 3-second countdown is completed successfully, the original form of the optical illusion will fade in, and the accuracy of the puzzle will be evaluated.  
+* Based on the accuracy, players can earn the labels: PERFECT, GOOD, or BAD.
 
 * 판정 조건이 달성되면 3초간 카운트다운이 시작됩니다. 
 * 정확도 측정 공식으로 유저의 input이 얼마나 별자리와 가까웠는지를 측정합니다.
@@ -44,12 +83,15 @@
 * 3초의 카운트다운을 버티면 착시 이미지의 원래 모습이 페이드인으로 나타나며, 해당 퍼즐에 대한 정확도를 평가해줍니다.
 * 정확도에 따라 PERFECT, GOOD, BAD 문구를 얻을 수 있습니다.
 
-### 4. 게임 시퀀스
+### 4. Game Sequence / 게임 시퀀스
+
+* Steps 2 and 3 are repeated throughout the game.  
+* After clearing all 15 stages or when the time limit of 500 seconds has elapsed, the final score screen will appear.
 
 * 위의 2, 3번을 반복하여 플레이합니다.
 * 15개의 스테이지를 모두 클리어하거나, 제한시간인 500초가 다 지나면 최종 스코어 화면이 나타납니다. 
 
-## 착시 원리
+## Principle of Optical Illusion / 착시 원리
 
 [깃허브 링크](https://github.com/dubidubob/IllusionTest)
 
