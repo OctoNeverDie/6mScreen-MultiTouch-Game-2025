@@ -20,15 +20,17 @@ Stellar는 3인 이상의 멀티플레이어 협동 게임으로, 쉬운 조작�
 
 ## Table of Contents / 목차 
 
-[Game Description / 게임 설명](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#game-description--%EA%B2%8C%EC%9E%84-%EC%84%A4%EB%AA%85)
-[Key Features / 주요 기능](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#key-features--%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5)
-* [1. Tutorial / 튜토리얼]
-* [2. Multitouch Touch Screen / 멀티터치 터치 스크린]
-* [3. Grading / 판정 시스템]
-* [4. Game Sequence / 게임 시퀀스]
-[Principle of Optical Illusion / 착시 원리]
-[Result Report / 결과 보고]
-[Potential for Development / 발전 가능성]
+[Game Description / 게임 설명](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#game-description--%EA%B2%8C%EC%9E%84-%EC%84%A4%EB%AA%85)  
+[Key Features / 주요 기능](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#key-features--%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5) 
+ 
+  [1. Tutorial / 튜토리얼](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#1-tutorial--%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC)  
+  [2. Multitouch Touch Screen / 멀티터치 터치 스크린](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#2-multitouch-touch-screen--%EB%A9%80%ED%8B%B0%ED%84%B0%EC%B9%98-%ED%84%B0%EC%B9%98-%EC%8A%A4%ED%81%AC%EB%A6%B0)  
+  [3. Grading / 판정 시스템](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#3-grading--%ED%8C%90%EC%A0%95-%EC%8B%9C%EC%8A%A4%ED%85%9C)  
+  [4. Game Sequence / 게임 시퀀스](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#4-game-sequence--%EA%B2%8C%EC%9E%84-%EC%8B%9C%ED%80%80%EC%8A%A4)  
+
+[Principle of Optical Illusion / 착시 원리](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#principle-of-optical-illusion--%EC%B0%A9%EC%8B%9C-%EC%9B%90%EB%A6%AC)  
+[Result Report / 결과 보고](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#result-report--%EA%B2%B0%EA%B3%BC-%EB%B3%B4%EA%B3%A0)  
+[Potential for Development / 발전 가능성](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#potential-for-development--%EB%B0%9C%EC%A0%84-%EA%B0%80%EB%8A%A5%EC%84%B1)  
 
 ## Game Description / 게임 설명
 
