@@ -20,13 +20,15 @@ Stellar는 3인 이상의 멀티플레이어 협동 게임으로, 쉬운 조작�
 
 ## Table of Contents / 목차 
 
-[Game Description / 게임 설명]
-[Key Features / 주요 기능]
+[Game Description / 게임 설명](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#game-description--%EA%B2%8C%EC%9E%84-%EC%84%A4%EB%AA%85)
+[Key Features / 주요 기능](https://github.com/OctoNeverDie/6mScreen-MultiTouch-Game-2025/blob/main/README.md#key-features--%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5)
 * [1. Tutorial / 튜토리얼]
 * [2. Multitouch Touch Screen / 멀티터치 터치 스크린]
 * [3. Grading / 판정 시스템]
 * [4. Game Sequence / 게임 시퀀스]
 [Principle of Optical Illusion / 착시 원리]
+[Result Report / 결과 보고]
+[Potential for Development / 발전 가능성]
 
 ## Game Description / 게임 설명
 
@@ -42,7 +44,7 @@ The key challenge was ensuring that the LiDAR sensor-based multitouch system acc
 
 ## Key Features / 주요 기능
 
-### 1. Tutorial 튜토리얼
+### 1. Tutorial / 튜토리얼
 
 ![image](https://github.com/user-attachments/assets/23ec2331-6719-42e1-b304-033ada46b206)
 
@@ -180,11 +182,11 @@ It introduces role distribution among players, game rules, and screen touch tech
 
 
 
-## 결과 보고
+## Result Report / 결과 보고
 [![시연 동영상](http://img.youtube.com/vi/chSA9CkVb6g/0.jpg)](https://youtu.be/chSA9CkVb6g)
 
 
-## 발전 가능성
+## Potential for Development / 발전 가능성
 
 * 대형 스크린을 활용한 설치 전시 가능
   * 예: 박물관 - 유물, 기업 - 제품 등으로 착시 이미지 대체
