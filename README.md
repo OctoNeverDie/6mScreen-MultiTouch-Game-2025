@@ -2,13 +2,13 @@
 
 **Stellar** is a cooperative multiplayer game for three or more players, characterized by easy controls and fast-paced gameplay.
 
-**Platform:** Windows  
-**Engine:** Unreal 5.3.2
+* Platform: Windows  
+* Engine: Unreal 5.3.2
 
 Stellar는 3인 이상의 멀티플레이어 협동 게임으로, 쉬운 조작과 빠른 게임 진행이 특징입니다.
 
-플랫폼: Windows
-사용엔진: Unreal 5.3.2
+* 플랫폼: Windows
+* 사용엔진: Unreal 5.3.2
 
 ![image](https://github.com/user-attachments/assets/5180ec91-8a99-4b28-9bba-840ad3534b87)
 
@@ -29,6 +29,11 @@ Stellar는 3인 이상의 멀티플레이어 협동 게임으로, 쉬운 조작�
 [Principle of Optical Illusion / 착시 원리]
 
 ## Game Description / 게임 설명
+
+This game is a cooperative multiplayer game for three or more players. One player takes on the role of the conductor, while the other players perform the movements.  
+The conductor stands at the back, observes the optical illusion, and describes the shape. The players in front then input movements to match the described shape.  
+If they hold a specific movement for three seconds, one puzzle is cleared.  
+The key challenge was ensuring that the LiDAR sensor-based multitouch system accurately captures fast inputs, allowing for a dynamic and fast-paced gameplay experience.
 
 이 게임은 3인 이상의 멀티플레이어 협동 게임입니다. 1명이 지휘를, 나머지 사람들이 동작을 맡습니다.
 지휘자 1명이 뒤에 서서 착시 이미지를 보고 형태를 설명하면, 앞에 선 나머지 사람들이 형태에 맞게 input을 넣습니다.
