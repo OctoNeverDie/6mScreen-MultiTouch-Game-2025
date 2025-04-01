@@ -64,7 +64,7 @@ It introduces role distribution among players, game rules, and screen touch tech
 * The player at the back communicates the positions to the players in front.  
   * Example: "Raise your left hand a bit higher," "Move your right foot slightly to the left," etc.  
 * After correctly positioning, the players must maintain the pose for 3 seconds.  
-  * At this time, the number of touches within a specified range must match the number of points to trigger the validation.
+  * At this time, the number of touches within a specified range must match the number of points to trigger the validation.<br/>
 
 * 화면 상에는 특정 그림이 숨겨진 착시 이미지가 배치됩니다.
   * (착시에 관한 내용은 '착시 원리' 부분 참고) 
@@ -81,7 +81,7 @@ It introduces role distribution among players, game rules, and screen touch tech
 * The accuracy takes into account the number of inputs and the distance between each input and the stars.  
 * If the number of inputs changes or the inputs move further from the points during the 3-second countdown, the process will restart from the beginning.  
 * If the 3-second countdown is completed successfully, the original form of the optical illusion will fade in, and the accuracy of the puzzle will be evaluated.  
-* Based on the accuracy, players can earn the labels: PERFECT, GOOD, or BAD.
+* Based on the accuracy, players can earn the labels: PERFECT, GOOD, or BAD.<br/>
 
 * 판정 조건이 달성되면 3초간 카운트다운이 시작됩니다. 
 * 정확도 측정 공식으로 유저의 input이 얼마나 별자리와 가까웠는지를 측정합니다.
@@ -93,41 +93,60 @@ It introduces role distribution among players, game rules, and screen touch tech
 ### 4. Game Sequence / 게임 시퀀스
 
 * Steps 2 and 3 are repeated throughout the game.  
-* After clearing all 15 stages or when the time limit of 500 seconds has elapsed, the final score screen will appear.
+* After clearing all 15 stages or when the time limit of 500 seconds has elapsed, the final score screen will appear.<br/>
 
 * 위의 2, 3번을 반복하여 플레이합니다.
 * 15개의 스테이지를 모두 클리어하거나, 제한시간인 500초가 다 지나면 최종 스코어 화면이 나타납니다. 
 
 ## Principle of Optical Illusion / 착시 원리
 
-[깃허브 링크](https://github.com/dubidubob/IllusionTest)
+[Github Link](https://github.com/dubidubob/IllusionTest)
 
-1. 배경화면 생성
-
-    > 전체 화면에 고주파 패턴이 있어야 한다.
-    > 고주파는, 밝기 채도 대비 전부 낮아야 한다. (앞사람 눈 고통 이슈)
+1. Generate Background / 배경화면 생성
+    > A high-frequency pattern must cover the entire screen.
+    > High-frequency should appear low in brightness, saturation, and contrast (to prevent eye strain for viewers seated in front).<br/>
     
-    * **무작위 컬러 노이즈 이미지 생성** (3840px x 2160px, 평균 128 회색, 분산 15)
-    * **전체 채도 낮춤** (BGR → HSV → BGR, 원래 채도의 20%)
-    * **전체 대비 낮춤** (중간값 128과의 거리를 0.5만큼 줄인다)
+    > 전체 화면에 고주파 패턴이 있어야 한다.
+    > 고주파는, 밝기 채도 대비 전부 낮아야 한다. (앞사람 눈 고통 이슈)<br/>
+    
+    * **Generate random color noise image / 무작위 컬러 노이즈 이미지 생성** (3840px x 2160px, mean 128 gray, variance 15)
+    * **Reduce saturation overall / 전체 채도 낮춤** (Convert BGR → HSV → BGR, apply 20% of original saturation)
+    * **Reduce contrast overall  / 전체 대비 낮춤** (Compress distance from mid-gray (128) by factor of 0.5)
        
     <img src="https://github.com/user-attachments/assets/491e416a-c4d1-45d7-9925-743ae55ddc1e" width="300">
 
-2. 별자리 상 생성
+2. Create Constellation Overlay / 별자리 상 생성
     
+    Hand-drawn in Clip Studio Paint
+   <br/>
     Clip Studio로 수작업
-    
+
+    * 3480px x 2160px
+    * Only edges are drawn; verify accuracy of vertex points
+    * Apply Gaussian Blur 100 over the entire layer
+<br/>
     * 3480px x 2160px
     * 엣지로만 작업, 꼭짓점 잘 표현됐는지 확인 
     * 이후 전체에 Gaussian Blur 100 적용
+<br/>
        
     <img src="https://github.com/user-attachments/assets/67f6367c-8d8b-44dd-a9f1-0aada081c3d4" width="300">
 
-3. 배경화면에 별자리 상 합침
+3. Merge Background and Constellation / 배경화면에 별자리 상 합침
     
+    > Background uses high-frequency; constellations use low-frequency.
+    > Adjust brightness, feathering, and alpha to allow constellation to blend subtly into the background.
+    
+    * Load both background and constellation images
+    * Replace all RGB values in the overlay with the average RGB of the background (Do not touch the alpha channel — retain its original transparency)
+    * Darken the overlay by 20 levels (dark-20)
+    * Apply Gaussian blur to the overlay’s edges for feathering (Edges should approach alpha = 0, and RGB = background average color)
+    * Decrease the overlay's alpha (make more transparent, multiply by 0.2)
+    * Finally, blend the processed overlay onto the background<br/>
+
     > 배경은 고주파로, 별자리는 저주파로 만든다.
     > 배경에 묻힌 저주파로 만들기 위해 밝기, 페더링, 알파값 조절
-    
+
     * 배경화면, 별자리 상 불러오기
     * **상의 색을 배경의 평균색으로** 전부 바꾸기 (알파값 채널은 적용하지 않음, 고유의 알파값을 유지시킨다)
     * **상의 밝기 더 어둡게 만들기**(dark-20)
@@ -135,10 +154,51 @@ It introduces role distribution among players, game rules, and screen touch tech
     (테두리로 갈 수록 **alpha값 0**에 수렴 + **rgb는 해당 배경의 색평균값**에 수렴)
     * **상의 알파값 높이기**(투명하게 만든다, *0.2)
     * 이후 배경 위에 처리된 상을 합성
-       
-    <img src="https://github.com/user-attachments/assets/3cdfa1c7-53d2-4d1e-929b-7801f268739c" width="300">
 
-4. 최종 이미지 지표값 도출
+<img src="https://github.com/user-attachments/assets/3cdfa1c7-53d2-4d1e-929b-7801f268739c" width="300">
+
+4. Extract Final Image Metrics / 최종 이미지 지표값 도출
+    > Contrast between background and constellation
+    > : Indicator of visibility from a distance
+    > Color distribution when zoomed in by 75%
+    > : Indicator of invisibility when viewed up close
+    >    * Maximum color variance (worst local uniformity)
+    >    * Mean color variance across all checked areas
+    >    * Number of sampled regions<br/>
+
+    > **Contrast between the background and the constellation overlay**
+    > : Indicates how visible the constellation appears from a distance
+    > **Color distribution when zoomed in by 75%**
+    > : Indicates how invisible the constellation appears up close
+    >    * The region with the least uniform color distribution (maximum standard deviation)
+    >    * The average standard deviation of color across all sampled regions
+    >    * The number of color distribution tests performed<br/>
+
+[1] Contrast Between Background and Overlay
+      The background is saved in BGR format, while the constellation overlay is saved in BGRA format.
+      This means the background and overlay can be separated using the alpha channel (i.e., overlay regions have alpha > 0, background has alpha ≈ 0).
+
+      * Convert image to Grayscale
+      * Use the alpha channel to create two masks:(Overlay mask: alpha > 0.05, Background mask: alpha ≤ 0.05)
+      * Compute the average brightness of each region
+      * Calculate the absolute difference between the two averages as the contrast metric<br/>
+      
+[2] Contrast Between Background and Overlay
+      Since most constellation shapes are centered, analysis is restricted to the central region of the image — specifically:
+      the central 80% of height and 80% of width.
+
+      Example workflow:
+      * For an image of width 200 and height 100, zooming in by 75% yields a window of width 50, height 25
+      * Discard 40% from both sides: analyze only vertical range 20–80, horizontal range 40–160
+      * Sample color distribution in subregions:
+       * e.g., vertical 20–45, horizontal 40–90
+       * then at midpoint: vertical 32.5–57.5, horizontal 65–115
+       * and near the edge: vertical 55–80, horizontal 110–160
+      * For each subregion:
+      * Calculate color standard deviation
+      * From all samples: Extract the maximum deviation (worst uniformity)
+      * Compute the average deviation
+      * Count how many regions were tested<br/>
 
     > **배경화면과 별자리 상의 대비 차이**
     > : 멀리서 봤을 때 얼마나 잘 보이는지 지표
@@ -146,9 +206,9 @@ It introduces role distribution among players, game rules, and screen touch tech
     > : 가까이서 봤을 때 얼마나 잘 안 보이는지 지표
     >    * 색 분포가 제일 안 고른 값(색 분포 표준편차 최댓값)
     >    * 색 분포의 평균(색 분포 표준편자 평균값)
-    >    * 색 분포 검사 횟수
+    >    * 색 분포 검사 횟수<br/>
     
-   첫째, 배경화면과 상의 대비
+[1] 배경화면과 상의 대비
     
     배경화면은 BGR로 저장,
     별자리 상은 BGRA로 저장된다.
@@ -159,8 +219,8 @@ It introduces role distribution among players, game rules, and screen touch tech
     * 알파값 기반 상 마스크, 배경 마스크 분리(alpha > 0.05시 상)
     * 각 영역 평균 밝기 계산
     * 대비 평균값 차이(절대값) 도출
-
-   둘째, 색 분포 
+    
+[2] 색 분포 
     
     대부분의 상이 가운데에 맺혀으니 가운데만 검사한다.
     세로 가운데 80%, 가로 가운데 80% 범위에 한정하여 도출한다.
@@ -177,16 +237,19 @@ It introduces role distribution among players, game rules, and screen touch tech
     * 몇 번 색 분포도 검사했는지 횟수 도출
     * 이때까지 검사한 색 분포도의 평균을 도출
 
-       
-    <img src="https://github.com/user-attachments/assets/eca0269e-b8a3-4e32-b5c5-7bf672cac72c" width="300">
+<br/>
+<img src="https://github.com/user-attachments/assets/eca0269e-b8a3-4e32-b5c5-7bf672cac72c" width="300">
 
 
 
 ## Result Report / 결과 보고
-[![시연 동영상](http://img.youtube.com/vi/chSA9CkVb6g/0.jpg)](https://youtu.be/chSA9CkVb6g)
+[![Demo Video](http://img.youtube.com/vi/chSA9CkVb6g/0.jpg)](https://youtu.be/chSA9CkVb6g)
 
 
 ## Potential for Development / 발전 가능성
+* Can be used for large-screen installation exhibitions
+ * Example: Museums – replacing optical illusions with artifact visuals
+* Corporations – replacing optical illusions with product visuals
 
 * 대형 스크린을 활용한 설치 전시 가능
   * 예: 박물관 - 유물, 기업 - 제품 등으로 착시 이미지 대체
