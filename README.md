@@ -20,7 +20,7 @@ Stellar는 3인 이상의 멀티플레이어 협동 게임으로, 쉬운 조작�
 
 ## Table of Contents / 목차 
 
-* [Game Description / 게임 설명](#Game-Description-/-게임-설명)
+* [Game Description / 게임 설명]
 * [Key Features / 주요 기능]
   * [1. Tutorial / 튜토리얼]
   * [2. Multitouch Touch Screen / 멀티터치 터치 스크린]  
