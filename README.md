@@ -1,8 +1,8 @@
 ## 팀원 소개
 
-* 김현민
+* [김현민](https://github.com/hyunmin0809)
+* [주소연](https://github.com/dubidubob)
 * [이주연](https://github.com/Yongmalyang/)
-* 주소연
 
 ## 프로젝트 의의
 
