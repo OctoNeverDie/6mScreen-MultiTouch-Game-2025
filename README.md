@@ -107,7 +107,7 @@ It introduces role distribution among players, game rules, and screen touch tech
 > High-frequency should appear low in brightness, saturation, and contrast (to prevent eye strain for viewers seated in front).<br/>
 
 > 전체 화면에 고주파 패턴이 있어야 한다.
-> 고주파는, 밝기 채도 대비 전부 낮아야 한다. (앞사람 눈 고통 이슈)
+> 고주파는, 밝기 채도 대비 전부 낮아야 한다. (밝기/채도/대비가 높으면 화면에 가까울수록 시력 피로 호소)
 <br/><br/>
 * **Generate random color noise image / 무작위 컬러 노이즈 이미지 생성** (3840px x 2160px, mean 128 gray, variance 15)
 * **Reduce saturation overall / 전체 채도 낮춤** (Convert BGR → HSV → BGR, apply 20% of original saturation)
